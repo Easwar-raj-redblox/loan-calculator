@@ -3,8 +3,8 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    border: 2px solid black;
     .loan-modal {
-        border: 2px solid black;
         padding: 24px;
         .loan-sub {
             display: flex;
@@ -34,6 +34,9 @@
                 .loan-values {
                     flex-direction: column;
                     align-items: flex-start;
+                    span {
+                        width: auto;
+                    }
                     input {
                         width: 100%;
                     }
@@ -47,33 +50,51 @@
             }
         }
 
-        .loan-payment-drop-div {
-            border: 1px solid rgb(24, 24, 24);
-            // width: 49%;
-            height: 40px;
-            border-radius: 6px;
+        .loan-values-drop {
             display: flex;
             justify-content: space-between;
-            position: relative;
             align-items: center;
-            background-color: white;
-            padding: 5px 10px;
-
-            .loan-payment-dropdown {
-                width: 100%;
-                position: absolute;
-                top: 50px;
-                left: 0;
-                background-color: white;
-                border-radius: 6px;
+            gap: 2px;
+            .loan-payment-drop-div {
                 border: 1px solid rgb(24, 24, 24);
-                z-index: 10;
-
-                .loan-payment-dropdown-value {
-                    display: flex;
-                    gap: 8px;
-                    align-items: center;
-                    padding: 5px 8px;
+                width: 50%;
+                height: 40px;
+                border-radius: 6px;
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                align-items: center;
+                background-color: white;
+                padding: 5px 10px;
+    
+                .loan-payment-dropdown {
+                    width: 100%;
+                    position: absolute;
+                    top: 60px;
+                    left: 0;
+                    background-color: white;
+                    border-radius: 6px;
+                    border: 1px solid rgb(24, 24, 24);
+                    z-index: 10;
+    
+                    .loan-payment-dropdown-value {
+                        display: flex;
+                        gap: 8px;
+                        align-items: center;
+                        padding: 5px 8px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 400px) {
+            .loan-values-drop {
+                flex-direction: column;
+                span {
+                    width: 100%;
+                }
+                .loan-payment-drop-div {
+                    width: 100%;
                 }
             }
         }

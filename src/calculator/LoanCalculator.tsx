@@ -82,7 +82,7 @@ export const LoanCalculator = ({UserStyle}: LoanPropType) => {
                         <span>Annual Interest Rate?:</span>
                         <input type="text" value={calculatorValues.interestRate} onChange={(e) => handleChange(e.target.value, 'interestRate')} style={{textAlign: 'right'}} placeholder='0.0%' />
                     </div>
-                    <div className='loan-values' style={{cursor: 'default'}}>
+                    <div className='loan-values-drop' style={{cursor: 'default'}}>
                         <span>Payment Method?:</span>
                         <div className='loan-payment-drop-div' onClick={() => setpaymentDropdown(!paymentDropdown)}>
                             <span>{calculatorValues.paymentMethod}</span>
