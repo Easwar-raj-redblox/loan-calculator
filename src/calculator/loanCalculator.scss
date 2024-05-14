@@ -1,0 +1,117 @@
+.loan-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    .loan-modal {
+        border: 2px solid black;
+        padding: 24px;
+        .loan-sub {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 15px;
+
+            .loan-values {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 2px;
+                span {
+                    font-weight: 500;
+                    width: 49%;
+                }
+                input {
+                    border: 1px solid rgb(24, 24, 24);
+                    font-weight: 500;
+                    width: 49%;
+                    height: 40px;
+                    padding: 5px 10px;
+                    border-radius: 6px;
+                }
+            }
+            @media screen and (max-width: 400px) {
+                .loan-values {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    input {
+                        width: 100%;
+                    }
+                    .loan-payment-drop-div {
+                        width: 100%;
+                    }
+                }
+                .loan-sub {
+                    align-items: flex-start;
+                }
+            }
+        }
+
+        .loan-payment-drop-div {
+            border: 1px solid rgb(24, 24, 24);
+            // width: 49%;
+            height: 40px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            align-items: center;
+            background-color: white;
+            padding: 5px 10px;
+
+            .loan-payment-dropdown {
+                width: 100%;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                background-color: white;
+                border-radius: 6px;
+                border: 1px solid rgb(24, 24, 24);
+                z-index: 10;
+
+                .loan-payment-dropdown-value {
+                    display: flex;
+                    gap: 8px;
+                    align-items: center;
+                    padding: 5px 8px;
+                }
+            }
+        }
+        
+        .loan-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+
+            button {
+                padding: 5px 10px;
+                border-radius: 6px;
+                border: none;
+                width: 48%;
+            }
+        }
+        @media screen and (max-width: 400px) {
+            .loan-buttons {
+                flex-direction: column;
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 400px) {
+        .loan-modal {
+            width: 88%;
+        }
+    }
+
+    .loan-horiz-main {
+        display: flex;
+        justify-content: center;
+        .loan-horiz {
+            width: 95%;
+            border: 1px solid grey;
+            text-align: center;
+        }
+    }
+}
