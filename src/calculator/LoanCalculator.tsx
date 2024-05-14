@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './loanCalculator.scss'
 import { Loan } from 'loanjs'
 import { IoIosArrowDown } from "react-icons/io";
-import { FaCheck } from "react-icons/fa";
+import { IoMdCheckmark } from "react-icons/io";
 import clsx from 'clsx';
 
 interface Loaner {
@@ -42,7 +42,7 @@ export const LoanCalculator = ({UserStyle}: LoanPropType) => {
     const [paymentDropdown, setpaymentDropdown] = useState(false)
     const handleChange = (e: string, variable: string) => {
         const numericValue = e.replace(/\D/g, '')
-        setcalculatorValues({...calculatorValues, [variable]: e})
+        setcalculatorValues({...calculatorValues, [variable]: numericValue})
     }
     console.log(calculatorValues)
     const calculate = () => {
@@ -83,18 +83,18 @@ export const LoanCalculator = ({UserStyle}: LoanPropType) => {
                         <input type="text" value={calculatorValues.interestRate} onChange={(e) => handleChange(e.target.value, 'interestRate')} style={{textAlign: 'right'}} placeholder='0.0%' />
                     </div>
                     <div className='loan-values-drop' style={{cursor: 'default'}}>
-                        <span>Payment Method?:</span>
+                        <span className='loan-values-label'>Payment Method?:</span>
                         <div className='loan-payment-drop-div' onClick={() => setpaymentDropdown(!paymentDropdown)}>
                             <span>{calculatorValues.paymentMethod}</span>
                             <span><IoIosArrowDown /></span>
                             {paymentDropdown&& <div className='loan-payment-dropdown'>
                                 <div onClick={() => handleChange('End-of-Period', 'paymentMethod')} className='loan-payment-dropdown-value'>
                                     <span>End-of-Period</span>
-                                    {calculatorValues.paymentMethod === 'End-of-Period' && <span><FaCheck /></span>}
+                                    {calculatorValues.paymentMethod === 'End-of-Period' && <span><IoMdCheckmark /></span>}
                                 </div>
                                 <div onClick={() => handleChange('Start-of-Period', 'paymentMethod')} className='loan-payment-dropdown-value'>
                                     <span>Start-of-Period</span>
-                                    {calculatorValues.paymentMethod === 'Start-of-Period' && <span><FaCheck /></span>}
+                                    {calculatorValues.paymentMethod === 'Start-of-Period' && <span><IoMdCheckmark /></span>}
                                 </div>
                             </div>}
                         </div>
